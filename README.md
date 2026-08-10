@@ -11,7 +11,7 @@ Competition page: [Titanic - Machine Learning from Disaster](https://www.kaggle.
 
 | Model | CV Accuracy | Leaderboard Accuracy |
 |---|---|---|
-| Gradient Boosting + Feature Engineering | ~0.801 | **0.789+** |
+| Random Forest Classifier + Feature Engineering | ~0.851 | **0.801+** |
 
 ## Feature engineering
 
@@ -29,29 +29,27 @@ The following engineered features contributed most to model performance:
 ## Project structure
 
 ```
-titanic_project/
-├── README.md
-├── environment.yml
-├── username.txt
-├── data/
-│   ├── train.csv
+kaggle-titanic/
+├── data
+│   ├── assets
+│   │   └── confusion_matrix.png
+│   ├── submission.csv
 │   ├── test.csv
-│   └── gender_submission.csv
-├── notebook/
+│   └── train.csv
+├── notebook
 │   └── EDA.ipynb
-└── scripts/
-    ├── train.py
-    └── predict.py
+├── README.md
+├── requirements.txt
+├── scripts
+│   ├── feature_engineering.py
+│   ├── model.pkl
+│   ├── predict.py
+│   └── train.py
+└── username.txt
 ```
 
 ## Setup
 
-```bash
-conda env create -f environment.yml
-conda activate titanic
-```
-
-Or with pip + venv:
 
 ```bash
 python -m venv venv
@@ -72,4 +70,4 @@ python scripts/predict.py
 
 ## Notes on test set score
 
-The local cross-validation accuracy (~83.6%) is intentionally slightly higher than the public leaderboard score (~80%), because the model is tuned against CV to avoid overfitting the public test set.
+The local cross-validation accuracy (~85.1%) is intentionally slightly higher than the public leaderboard score (~80%), because the model is tuned against CV to avoid overfitting the public test set.
