@@ -50,7 +50,7 @@ def process_data(train_df, test_df):
         'male': 0}).astype(int)
 
     data['Age'] = data.groupby(['Pclass', 'Title'])['Age'].transform(lambda x: x.fillna(x.median()))
-    data['Age'] = data['Age'].fillna(data['Age'].median()) 
+    data['Age'] = data['Age'].fillna(data['Age'].median())
     
     data.loc[ data['Age'] <= 16, 'Age'] = 0
     data.loc[(data['Age'] > 16) & (data['Age'] <= 32), 'Age'] = 1

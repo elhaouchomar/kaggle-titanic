@@ -7,7 +7,7 @@ from feature_engineering import process_data
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "train.csv")
 TEST_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "test.csv")
-OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "submission.csv")
+OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "gender_submission.csv")
 
 def main():
     train_df = pd.read_csv(DATA_PATH)
